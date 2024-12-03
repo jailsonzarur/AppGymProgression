@@ -27,9 +27,9 @@ def sign_up(user: schemas.User, db: Session = Depends(get_db)):
     return created_user
 
 @router.post("/login", status_code = status.HTTP_200_OK)
-def login(user: schemas.UserLogin, db: Session = Depends(get_db)):
-    username = user.username
-    password = user.password
+def login(user_login: schemas.UserLogin, db: Session = Depends(get_db)):
+    username = user_login.username
+    password = user_login.password
 
     user = UserRepositorie(db).get_user_by_username(username)
 
