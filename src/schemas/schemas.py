@@ -1,16 +1,21 @@
 from pydantic import BaseModel
 from typing import List
 
+class Planilha( BaseModel ):
+
+    name: str
+    description: str
+
 class User( BaseModel ):
 
     username: str
     email: str
     password: str
 
-class Planilha( BaseModel ):
+class UserLogin( BaseModel ):
 
-    name: str
-    description: str
+    username: str
+    password: str
 
 """
 class UserInfo( BaseModel ):
